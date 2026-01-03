@@ -32,8 +32,12 @@
             opacity: 0.8;
             margin-bottom: 20px;
         }
+        .timer {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
         a {
-            display: block;
+            display: none;
             padding: 14px;
             background: #22c55e;
             color: #000;
@@ -49,10 +53,27 @@
 <body>
 
 <div class="box">
-    <h1>Проверка доступна ✅</h1>
-    <p>Нажмите кнопку ниже, чтобы продолжить</p>
-    <a href="https://t.me/hitvpnplusbot?start=referral_6576741165">Продолжить</a>
+    <h1>Проверка доступа</h1>
+    <p>Пожалуйста, подождите…</p>
+    <div class="timer" id="timer">3</div>
+    <a id="continueBtn" href="https://t.me/hitvpnplusbot?start=referral_6576741165">Продолжить</a>
 </div>
+
+<script>
+    let time = 3;
+    const timerEl = document.getElementById("timer");
+    const btn = document.getElementById("continueBtn");
+
+    const countdown = setInterval(() => {
+        time--;
+        timerEl.textContent = time;
+        if (time <= 0) {
+            clearInterval(countdown);
+            timerEl.style.display = "none";
+            btn.style.display = "block";
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
