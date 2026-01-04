@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Проверка доступа</title>
+=======
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xylobo</title>
+<link rel="icon" href="favicon.png" type="image/png">
+>>>>>>> d55989b (Добавил финальную версию сайта с логотипом и фавиконом)
 
 <style>
 * {
@@ -19,6 +27,7 @@ body {
 }
 
 /* ===== HEADER ===== */
+<<<<<<< HEAD
 header {
     display: flex;
     justify-content: center;
@@ -26,6 +35,21 @@ header {
     padding: 20px;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(6px);
+=======
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* логотип слева, кнопки справа */
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+}
+header .nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+>>>>>>> d55989b (Добавил финальную версию сайта с логотипом и фавиконом)
 }
 
 header button {
@@ -43,6 +67,33 @@ header button:hover {
     background: rgba(255,255,255,0.1);
 }
 
+<<<<<<< HEAD
+=======
+.logo {
+    height: 50px;       /* высота логотипа */
+    margin-right: 425px; /* отступ до кнопок */
+}
+
+.theme-toggle {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.theme-toggle:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+>>>>>>> d55989b (Добавил финальную версию сайта с логотипом и фавиконом)
 /* ===== MAIN CONTAINER ===== */
 .container {
     max-width: 800px;
@@ -187,16 +238,38 @@ body.light .info-box h2 {
 body.light a {
     color: #111;
 }
+<<<<<<< HEAD
+=======
+body.light .theme-toggle {
+    color: #111;
+    border-color: rgba(0,0,0,0.25);
+}
+
+body.light .theme-toggle:hover {
+    background: rgba(0,0,0,0.08);
+}
+>>>>>>> d55989b (Добавил финальную версию сайта с логотипом и фавиконом)
 </style>
 </head>
 
 <body>
 
 <header>
+<<<<<<< HEAD
     <button onclick="showMain()">Главная</button>
     <button onclick="showInstruction()">Инструкция</button>
     <button onclick="showFAQ()">FAQ</button>
     <button onclick="toggleTheme()">🌗</button>
+=======
+    <div class="nav">
+        <img src="logo.png" alt="XyloBo" class="logo">
+        <button onclick="showMain()">Главная</button>
+        <button onclick="showInstruction()">Инструкция</button>
+        <button onclick="showFAQ()">FAQ</button>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
+>>>>>>> d55989b (Добавил финальную версию сайта с логотипом и фавиконом)
 </header>
 
 <!-- ===== MAIN PAGE ===== -->
