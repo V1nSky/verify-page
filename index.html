@@ -131,13 +131,61 @@ header button:hover {
     margin-top: 0;
 }
 
-.info-box p, .info-box li {
+.info-box p,
+.info-box li {
     color: #f0f0f0;
     line-height: 1.65;
 }
 
 .info-box ul {
     padding-left: 20px;
+}
+
+/* ===== LIGHT THEME ===== */
+body.light {
+    background: linear-gradient(135deg, #f2f2f2, #ffffff);
+    color: #111;
+}
+
+body.light header {
+    background: rgba(255,255,255,0.9);
+}
+
+body.light header button {
+    color: #111;
+    border-color: rgba(0,0,0,0.2);
+}
+
+body.light header button:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+body.light .main-card {
+    background: rgba(0,0,0,0.04);
+    border-color: rgba(0,0,0,0.15);
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+body.light .info-box {
+    background: rgba(255,255,255,0.85);
+    border-color: rgba(0,0,0,0.25);
+    box-shadow: 0 0 25px rgba(0,0,0,0.1);
+}
+
+body.light .badge {
+    background: rgba(0,0,0,0.04);
+    border-color: rgba(0,0,0,0.2);
+    color: #111;
+}
+
+body.light .info-box p,
+body.light .info-box li,
+body.light .info-box h2 {
+    color: #111;
+}
+
+body.light a {
+    color: #111;
 }
 </style>
 </head>
@@ -148,6 +196,7 @@ header button:hover {
     <button onclick="showMain()">Главная</button>
     <button onclick="showInstruction()">Инструкция</button>
     <button onclick="showFAQ()">FAQ</button>
+    <button onclick="toggleTheme()">🌗</button>
 </header>
 
 <!-- ===== MAIN PAGE ===== -->
@@ -159,26 +208,22 @@ header button:hover {
             Нажмите кнопку ниже, чтобы продолжить.
         </p>
 
-        <!-- 🔴 ВСТАВЬ СЮДА СВОЮ РЕФКУ -->
         <a href="https://t.me/CheckScan_robot?start=ref_865457398" target="_blank">
             Продолжить
         </a>
 
-        <!-- TRUST BADGES -->
         <div class="badges">
             <div class="badge">🔐 Официальный Telegram-бот<br>Работа через проверенные сервисы</div>
-            <div class="badge">🛡 Без передачи данных<br>Мы не запрашиваем пароли и личную информацию</div>
-            <div class="badge">⚙ Автоматическая обработка<br>Без участия администраторов</div>
+            <div class="badge">🛡 Без передачи данных<br>Мы не запрашиваем пароли</div>
+            <div class="badge">⚙ Автоматическая обработка<br>Без администраторов</div>
             <div class="badge">💸 Выплаты через CryptoBot<br>Без посредников</div>
-            <div class="badge">⏱ Сервис работает 24/7<br>Без выходных</div>
+            <div class="badge">⏱ Работа 24/7<br>Без выходных</div>
         </div>
 
-        <!-- INCOME -->
         <div class="income">
             📊 Доход<br>
-            По статистике активных пользователей возможен доход
-            <strong>от 60$ чистыми</strong>.
-            <small>Доход не гарантирован и зависит от активности пользователя.</small>
+            Возможен доход <strong>от 60$ чистыми</strong>
+            <small>Доход зависит от активности пользователя</small>
         </div>
     </div>
 </div>
@@ -188,11 +233,11 @@ header button:hover {
     <div class="info-box">
         <h2>Инструкция</h2>
         <ul>
-            <li>Нажмите «Продолжить» на главной странице</li>
-            <li>Перейдите в Telegram-бот сервиса</li>
-            <li>Пополните баланс при необходимости</li>
-            <li>Запустите обработку чеков</li>
-            <li>Ожидайте выполнения</li>
+            <li>Нажмите «Продолжить»</li>
+            <li>Перейдите в Telegram-бот</li>
+            <li>Пополните баланс</li>
+            <li>Запустите обработку</li>
+            <li>Ожидайте результат</li>
         </ul>
     </div>
 </div>
@@ -201,39 +246,14 @@ header button:hover {
 <div id="faq" class="container">
     <div class="info-box">
         <h2>FAQ</h2>
-
         <p><strong>Как купить криптовалюту?</strong></p>
-        <ul>
-            <li>
-                Откройте 
-                <a href="https://t.me/send?start=r-kst9t-market" target="_blank" style="color:#fff; text-decoration:underline;">
-                    CryptoBot
-                </a>
-                в Telegram
-            </li>
-            <li>Выберите покупку Tether USDT</li>
-            <li>Оплатите банковской картой</li>
-        </ul>
+        <p>Откройте CryptoBot и приобретите USDT банковской картой.</p>
 
-        <p><strong>Что делать после покупки?</strong></p>
-        <ul>
-            <li>Откройте бота
-                <a href="https://t.me/CheckScan_robot?start=ref_865457398" target="_blank" style="color:#fff; text-decoration:underline;">
-                    CheckScan
-                </a>
-            </li>
-            <li>Выберите «Парсинг чеков»</li>
-            <li>Оплатите и ожидайте результат</li>
-        </ul>
+        <p><strong>Что делать дальше?</strong></p>
+        <p>Откройте CheckScan → «Парсинг чеков» → оплатите.</p>
 
         <p><strong>Как вывести деньги?</strong></p>
-        <p>
-            Средства поступают в 
-            <a href="https://t.me/send?start=r-kst9t-market" target="_blank" style="color:#fff; text-decoration:underline;">
-                CryptoBot
-            </a>, где их можно обменять
-            и вывести на банковскую карту.
-        </p>
+        <p>Средства поступают в CryptoBot и выводятся на карту.</p>
     </div>
 </div>
 
@@ -257,6 +277,10 @@ function showInstruction() {
 function showFAQ() {
     hideAll();
     document.getElementById('faq').style.display = 'block';
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('light');
 }
 
 showMain();
