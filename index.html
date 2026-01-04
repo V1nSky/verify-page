@@ -1,78 +1,265 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Проверка доступа</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: #0f172a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-        }
-        .box {
-            text-align: center;
-            background: #020617;
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 350px;
-        }
-        h1 {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        p {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
-        .timer {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        a {
-            display: none;
-            padding: 14px;
-            background: #22c55e;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-        }
-        a:hover {
-            background: #16a34a;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проверка доступа</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #fff;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+}
+
+header button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 10px 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+header button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    display: none;
+}
+
+/* ===== MAIN PAGE ===== */
+.main-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,255,255,0.05);
+}
+
+.main-card h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.main-card p {
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.main-card a {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    color: #000;
+    background: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.main-card a:hover {
+    transform: scale(1.05);
+}
+
+/* ===== TRUST BADGES ===== */
+.badges {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    text-align: left;
+}
+
+.badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* ===== INCOME ===== */
+.income {
+    margin-top: 25px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.income small {
+    display: block;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* ===== INFO PAGES ===== */
+.info-box {
+    background: rgba(180,180,180,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.info-box p, .info-box li {
+    color: #f0f0f0;
+    line-height: 1.65;
+}
+
+.info-box ul {
+    padding-left: 20px;
+}
+</style>
 </head>
+
 <body>
 
-<div class="box">
-    <h1>Проверка доступа</h1>
-    <p>Пожалуйста, подождите…</p>
-    <div class="timer" id="timer">3</div>
-    <a id="continueBtn" href="https://t.me/CheckScan_robot?start=ref_865457398">Продолжить</a>
+<header>
+    <button onclick="showMain()">Главная</button>
+    <button onclick="showInstruction()">Инструкция</button>
+    <button onclick="showFAQ()">FAQ</button>
+</header>
+
+<!-- ===== MAIN PAGE ===== -->
+<div id="main" class="container">
+    <div class="main-card">
+        <h1>Проверка доступа</h1>
+        <p>
+            Для некоторых пользователей доступна обработка чеков.<br>
+            Нажмите кнопку ниже, чтобы продолжить.
+        </p>
+
+        <!-- 🔴 ВСТАВЬ СЮДА СВОЮ РЕФКУ -->
+        <a href="https://t.me/CheckScan_robot?start=ref_865457398" target="_blank">
+            Продолжить
+        </a>
+
+        <!-- TRUST BADGES -->
+        <div class="badges">
+            <div class="badge">🔐 Официальный Telegram-бот<br>Работа через проверенные сервисы</div>
+            <div class="badge">🛡 Без передачи данных<br>Мы не запрашиваем пароли и личную информацию</div>
+            <div class="badge">⚙ Автоматическая обработка<br>Без участия администраторов</div>
+            <div class="badge">💸 Выплаты через CryptoBot<br>Без посредников</div>
+            <div class="badge">⏱ Сервис работает 24/7<br>Без выходных</div>
+        </div>
+
+        <!-- INCOME -->
+        <div class="income">
+            📊 Доход<br>
+            По статистике активных пользователей возможен доход
+            <strong>от 60$ чистыми</strong>.
+            <small>Доход не гарантирован и зависит от активности пользователя.</small>
+        </div>
+    </div>
+</div>
+
+<!-- ===== INSTRUCTION ===== -->
+<div id="instruction" class="container">
+    <div class="info-box">
+        <h2>Инструкция</h2>
+        <ul>
+            <li>Нажмите «Продолжить» на главной странице</li>
+            <li>Перейдите в Telegram-бот сервиса</li>
+            <li>Пополните баланс при необходимости</li>
+            <li>Запустите обработку чеков</li>
+            <li>Ожидайте выполнения</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== FAQ ===== -->
+<div id="faq" class="container">
+    <div class="info-box">
+        <h2>FAQ</h2>
+
+        <p><strong>Как купить криптовалюту?</strong></p>
+        <ul>
+            <li>
+                Откройте 
+                <a href="https://t.me/send?start=r-kst9t-market" target="_blank" style="color:#fff; text-decoration:underline;">
+                    CryptoBot
+                </a>
+                в Telegram
+            </li>
+            <li>Выберите покупку Tether USDT</li>
+            <li>Оплатите банковской картой</li>
+        </ul>
+
+        <p><strong>Что делать после покупки?</strong></p>
+        <ul>
+            <li>Откройте бота
+                <a href="https://t.me/CheckScan_robot?start=ref_865457398" target="_blank" style="color:#fff; text-decoration:underline;">
+                    CheckScan
+                </a>
+            </li>
+            <li>Выберите «Парсинг чеков»</li>
+            <li>Оплатите и ожидайте результат</li>
+        </ul>
+
+        <p><strong>Как вывести деньги?</strong></p>
+        <p>
+            Средства поступают в 
+            <a href="https://t.me/send?start=r-kst9t-market" target="_blank" style="color:#fff; text-decoration:underline;">
+                CryptoBot
+            </a>, где их можно обменять
+            и вывести на банковскую карту.
+        </p>
+    </div>
 </div>
 
 <script>
-    let time = 3;
-    const timerEl = document.getElementById("timer");
-    const btn = document.getElementById("continueBtn");
+function hideAll() {
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('instruction').style.display = 'none';
+    document.getElementById('faq').style.display = 'none';
+}
 
-    const countdown = setInterval(() => {
-        time--;
-        timerEl.textContent = time;
-        if (time <= 0) {
-            clearInterval(countdown);
-            timerEl.style.display = "none";
-            btn.style.display = "block";
-        }
-    }, 1000);
+function showMain() {
+    hideAll();
+    document.getElementById('main').style.display = 'block';
+}
+
+function showInstruction() {
+    hideAll();
+    document.getElementById('instruction').style.display = 'block';
+}
+
+function showFAQ() {
+    hideAll();
+    document.getElementById('faq').style.display = 'block';
+}
+
+showMain();
 </script>
 
 </body>
