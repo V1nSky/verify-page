@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #fff;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    flex-wrap: wrap; /* чтобы на узких экранах переносилось */
+}
+
+header .nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+header button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+header button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.logo {
+    height: 45px;
+    margin-right: 15px;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.theme-toggle:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    display: none;
+}
+
+/* ===== MAIN PAGE ===== */
+.main-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,255,255,0.05);
+}
+
+.main-card h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.main-card p {
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.main-card a {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.main-card a:hover {
+    transform: scale(1.05);
+}
+
+/* ===== TRUST BADGES ===== */
+.badges {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    text-align: left;
+}
+
+.badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* ===== INCOME ===== */
+.income {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.income small {
+    display: block;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+/* ===== INFO PAGES ===== */
+.info-box {
+    background: rgba(180,180,180,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.info-box p,
+.info-box li {
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.info-box ul {
+    padding-left: 20px;
+}
+
+/* ===== LIGHT THEME ===== */
+body.light {
+    background: linear-gradient(135deg, #f2f2f2, #ffffff);
+    color: #111;
+}
+
+body.light header {
+    background: rgba(255,255,255,0.9);
+}
+
+body.light header button {
+    color: #111;
+    border-color: rgba(0,0,0,0.2);
+}
+
+body.light header button:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+body.light .main-card {
+    background: rgba(0,0,0,0.04);
+    border-color: rgba(0,0,0,0.15);
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+body.light .info-box {
+    background: rgba(255,255,255,0.85);
+    border-color: rgba(0,0,0,0.25);
+    box-shadow: 0 0 25px rgba(0,0,0,0.1);
+}
+
+body.light .badge {
+    background: rgba(0,0,0,0.04);
+    border-color: rgba(0,0,0,0.2);
+    color: #111;
+}
+
+body.light .info-box p,
+body.light .info-box li,
+body.light .info-box h2 {
+    color: #111;
+}
+
+body.light a {
+    color: #111;
+}
+
+body.light .theme-toggle {
+    color: #111;
+    border-color: rgba(0,0,0,0.25);
+}
+
+body.light .theme-toggle:hover {
+    background: rgba(0,0,0,0.08);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header .nav {
+        gap: 8px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    .theme-toggle {
+        right: 15px;
+        top: auto;
+        margin-top: 5px;
+    }
+    .main-card {
+        padding: 30px 15px;
+    }
+    .main-card a {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+    .badges {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Мелкие телефоны */
+@media (max-width: 480px) {
+    header button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    .theme-toggle {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    .main-card h1 {
+        font-size: 22px;
+    }
+}
